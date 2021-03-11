@@ -1,0 +1,23 @@
+{
+  "name": "brightdropdashboard",
+  "version": "1.0.0",
+  "description": "proof of concept for GM brightdrop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkunke1/brightdropDashboard.git"
+  },
+  "keywords": [
+    "brightdrop",
+    "dashboard"
+  ],
+  "author": "Brandon Kunkel",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bkunke1/brightdropDashboard/issues"
+  },
+  "homepage": "https://github.com/bkunke1/brightdropDashboard#readme"
+}
