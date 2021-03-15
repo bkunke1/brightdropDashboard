@@ -1,2 +1,1 @@
-# brightdropDashboard
-Proof of concept for GM Brightdrop
+# Brightdrop – Admin & Dashboard Template
