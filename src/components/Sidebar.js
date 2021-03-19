@@ -121,7 +121,7 @@ const Sidebar = ({ location, sidebar, layout }) => {
         <PerfectScrollbar>
           <a className="sidebar-brand" href="/">
             <Box className="align-middle text-primary" size={24} />{" "}
-            <span className="align-middle">AppStack</span>
+            <span className="align-middle">Brightdrop</span>
           </a>
 
           <ul className="sidebar-nav">

@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Card, CardBody, Media, Row } from "reactstrap";
 
 import { ShoppingCart, Activity, DollarSign, ShoppingBag } from "react-feather";
 
-const Statistics = () => (
-  <Row>
+const Statistics = () => {
+
+  let test1;
+
+  useEffect(() => {
+    const getData =  async () => {
+      const response = await fetch('http://localhost:5000/api/vehicles/1234');
+
+      const responseData = await response.json();
+      test = responseData;
+    }
+    getData();
+  }, []);
+
+  console.log(test1);
+
+  return <Row>
     <Col md="6" xl>
       <Card className="flex-fill">
         <CardBody className="py-4">
@@ -13,7 +28,7 @@ const Statistics = () => (
               <ShoppingCart className="feather-lg text-primary" />
             </div>
             <Media body>
-              <h3 className="mb-2">2.562</h3>
+              <h3 className="mb-2">4.44</h3>
               <div className="mb-0">Sales Today</div>
             </Media>
           </Media>
@@ -81,6 +96,6 @@ const Statistics = () => (
       </Card>
     </Col>
   </Row>
-);
+};
 
 export default Statistics;

@@ -112,45 +112,91 @@ const VectorMaps = async(() => import("../pages/maps/VectorMaps"));
 const GoogleMaps = async(() => import("../pages/maps/GoogleMaps"));
 
 // Routes
+// const landingRoutes = {
+//   path: "/",
+//   name: "Landing Page",
+//   component: Landing,
+//   children: null
+// };
 const landingRoutes = {
   path: "/",
   name: "Landing Page",
-  component: Landing,
+  component: Default,
   children: null
 };
 
 const dashboardRoutes = {
-  path: "/dashboard",
-  name: "Dashboards",
-  header: "Pages",
+  path: "/dashboard/default",
+  name: "Dashboard",
+  header: "Menu",
   badgeColor: "primary",
   badgeText: "5",
   icon: SlidersIcon,
   containsHome: true,
+  component: Default,
+  children: null
+  // children: [
+  //   {
+  //     path: "/dashboard/default",
+  //     name: "Default",
+  //     component: Default
+  //   },
+  //   {
+  //     path: "/dashboard/analytics",
+  //     name: "Analytics",
+  //     component: Analytics
+  //   },
+  //   {
+  //     path: "/dashboard/e-commerce",
+  //     name: "E-commerce",
+  //     component: Ecommerce
+  //   },
+  //   {
+  //     path: "/dashboard/social",
+  //     name: "Social",
+  //     component: Social
+  //   },
+  //   {
+  //     path: "/dashboard/crypto",
+  //     name: "Cryptoz",
+  //     component: Crypto,
+  //     badgeColor: "primary",
+  //     badgeText: "New"
+  //   }
+  // ]
+};
+
+const vehicleRoutes = {
+  path: "/dashboard/vehicles",
+  name: "Vehicles",
+  badgeColor: "primary",
+  // badgeText: "5",
+  icon: SlidersIcon,
+  containsHome: true,
   children: [
     {
-      path: "/dashboard/default",
-      name: "Default",
+      path: "/dashboard/option1",
+      name: "option1",
       component: Default
     },
     {
-      path: "/dashboard/analytics",
-      name: "Analytics",
+      path: "/dashboard/option2",
+      name: "option2",
       component: Analytics
     },
     {
-      path: "/dashboard/e-commerce",
-      name: "E-commerce",
+      path: "/dashboard/option3",
+      name: "option3",
       component: Ecommerce
     },
     {
-      path: "/dashboard/social",
-      name: "Social",
+      path: "/dashboard/option4",
+      name: "option4",
       component: Social
     },
     {
-      path: "/dashboard/crypto",
-      name: "Crypto",
+      path: "/dashboard/option4",
+      name: "option4",
       component: Crypto,
       badgeColor: "primary",
       badgeText: "New"
@@ -158,60 +204,98 @@ const dashboardRoutes = {
   ]
 };
 
-const pageRoutes = {
-  path: "/pages",
-  name: "Pages",
-  icon: LayoutIcon,
+const inspectionRoutes = {
+  path: "/dashboard/vehicles",
+  name: "Inspections",
+  badgeColor: "primary",
+  // badgeText: "5",
+  icon: SlidersIcon,
+  containsHome: true,
   children: [
     {
-      path: "/pages/profile",
-      name: "Profile",
-      component: Profile
+      path: "/dashboard/inspections/option1",
+      name: "option1",
+      component: Default
     },
     {
-      path: "/pages/settings",
-      name: "Settings",
-      component: Settings
+      path: "/dashboard/inspections/option2",
+      name: "option2",
+      component: Analytics
     },
     {
-      path: "/pages/clients",
-      name: "Clients",
-      component: Clients
+      path: "/dashboard/inspections/option3",
+      name: "option3",
+      component: Ecommerce
     },
     {
-      path: "/pages/projects",
-      name: "Projects",
-      component: Projects
+      path: "/dashboard/inspections/option4",
+      name: "option4",
+      component: Social
     },
     {
-      path: "/pages/invoice",
-      name: "Invoice",
-      component: Invoice
-    },
-    {
-      path: "/pages/pricing",
-      name: "Pricing",
-      component: Pricing
-    },
-    {
-      path: "/pages/tasks",
-      name: "Tasks",
-      component: Tasks
-    },
-    {
-      path: "/pages/chat",
-      name: "Chat",
-      component: Chat,
+      path: "/dashboard/inspections/option4",
+      name: "option4",
+      component: Crypto,
       badgeColor: "primary",
       badgeText: "New"
-    },
-    {
-      path: "/pages/blank",
-      name: "Blank Page",
-      component: Blank
     }
   ]
 };
+
+// const pageRoutes = {
+//   path: "/pages",
+//   name: "Pages",
+//   icon: LayoutIcon,
+//   children: [
+//     {
+//       path: "/pages/profile",
+//       name: "Profile",
+//       component: Profile
+//     },
+//     {
+//       path: "/pages/settings",
+//       name: "Settings",
+//       component: Settings
+//     },
+//     {
+//       path: "/pages/clients",
+//       name: "Clients",
+//       component: Clients
+//     },
+//     {
+//       path: "/pages/projects",
+//       name: "Projects",
+//       component: Projects
+//     },
+//     {
+//       path: "/pages/invoice",
+//       name: "Invoice",
+//       component: Invoice
+//     },
+//     {
+//       path: "/pages/pricing",
+//       name: "Pricing",
+//       component: Pricing
+//     },
+//     {
+//       path: "/pages/tasks",
+//       name: "Tasks",
+//       component: Tasks
+//     },
+//     {
+//       path: "/pages/chat",
+//       name: "Chat",
+//       component: Chat,
+//       badgeColor: "primary",
+//       badgeText: "New"
+//     },
+//     {
+//       path: "/pages/blank",
+//       name: "Blank Page",
+//       component: Blank
+//     }
+//   ]
+// };
 
 const authRoutes = {
   path: "/auth",
@@ -248,315 +332,315 @@ const authRoutes = {
   ]
 };
 
-const layoutRoutes = {
-  path: "/layouts",
-  name: "Layouts",
-  icon: MonitorIcon,
-  children: [
-    {
-      path: "/layouts/sidebar-sticky",
-      name: "Sticky Sidebar",
-      component: SidebarSticky
-    },
-    {
-      path: "/layouts/sidebar-collapsed",
-      name: "Sidebar Collapsed",
-      component: SidebarCollapsed
-    },
-    {
-      path: "/layouts/boxed",
-      name: "Boxed Layout",
-      component: Boxed
-    },
-    {
-      path: "/layouts/theme-classic",
-      name: "Classic Theme",
-      component: ThemeClassic
-    },
-    {
-      path: "/layouts/theme-corporate",
-      name: "Corporate Theme",
-      component: ThemeCorporate,
-      badgeColor: "primary",
-      badgeText: "New"
-    },
-    {
-      path: "/layouts/theme-modern",
-      name: "Modern Theme",
-      component: ThemeModern,
-      badgeColor: "primary",
-      badgeText: "New"
-    }
-  ]
-};
+// const layoutRoutes = {
+//   path: "/layouts",
+//   name: "Layouts",
+//   icon: MonitorIcon,
+//   children: [
+//     {
+//       path: "/layouts/sidebar-sticky",
+//       name: "Sticky Sidebar",
+//       component: SidebarSticky
+//     },
+//     {
+//       path: "/layouts/sidebar-collapsed",
+//       name: "Sidebar Collapsed",
+//       component: SidebarCollapsed
+//     },
+//     {
+//       path: "/layouts/boxed",
+//       name: "Boxed Layout",
+//       component: Boxed
+//     },
+//     {
+//       path: "/layouts/theme-classic",
+//       name: "Classic Theme",
+//       component: ThemeClassic
+//     },
+//     {
+//       path: "/layouts/theme-corporate",
+//       name: "Corporate Theme",
+//       component: ThemeCorporate,
+//       badgeColor: "primary",
+//       badgeText: "New"
+//     },
+//     {
+//       path: "/layouts/theme-modern",
+//       name: "Modern Theme",
+//       component: ThemeModern,
+//       badgeColor: "primary",
+//       badgeText: "New"
+//     }
+//   ]
+// };
 
-const documentationRoutes = {
-  path: "/docs",
-  name: "Documentation",
-  icon: BookOpenIcon,
-  children: [
-    {
-      path: "/docs/introduction",
-      name: "Introduction",
-      component: Introduction
-    },
-    {
-      path: "/docs/getting-started",
-      name: "Getting Started",
-      component: GettingStarted
-    },
-    {
-      path: "/docs/environment-variables",
-      name: "Environment Variables",
-      component: EnvironmentVariables
-    },
-    {
-      path: "/docs/deployment",
-      name: "Deployment",
-      component: Deployment
-    },
-    {
-      path: "/docs/state-management",
-      name: "State Management",
-      component: StateManagement
-    },
-    {
-      path: "/docs/plugins",
-      name: "Plugins",
-      component: Plugins
-    },
-    {
-      path: "/docs/changelog",
-      name: "Changelog",
-      component: Changelog
-    }
-  ]
-};
+// const documentationRoutes = {
+//   path: "/docs",
+//   name: "Documentation",
+//   icon: BookOpenIcon,
+//   children: [
+//     {
+//       path: "/docs/introduction",
+//       name: "Introduction",
+//       component: Introduction
+//     },
+//     {
+//       path: "/docs/getting-started",
+//       name: "Getting Started",
+//       component: GettingStarted
+//     },
+//     {
+//       path: "/docs/environment-variables",
+//       name: "Environment Variables",
+//       component: EnvironmentVariables
+//     },
+//     {
+//       path: "/docs/deployment",
+//       name: "Deployment",
+//       component: Deployment
+//     },
+//     {
+//       path: "/docs/state-management",
+//       name: "State Management",
+//       component: StateManagement
+//     },
+//     {
+//       path: "/docs/plugins",
+//       name: "Plugins",
+//       component: Plugins
+//     },
+//     {
+//       path: "/docs/changelog",
+//       name: "Changelog",
+//       component: Changelog
+//     }
+//   ]
+// };
 
-const uiRoutes = {
-  path: "/ui",
-  name: "UI Elements",
-  header: "Tools & Components",
-  icon: GridIcon,
-  children: [
-    {
-      path: "/ui/alerts",
-      name: "Alerts",
-      component: Alerts
-    },
-    {
-      path: "/ui/buttons",
-      name: "Buttons",
-      component: Buttons
-    },
-    {
-      path: "/ui/cards",
-      name: "Cards",
-      component: Cards
-    },
-    {
-      path: "/ui/carousel",
-      name: "Carousel",
-      component: Carousel
-    },
-    {
-      path: "/ui/embed-video",
-      name: "Embed Video",
-      component: EmbedVideo
-    },
-    {
-      path: "/ui/general",
-      name: "General",
-      component: General,
-      badgeColor: "info",
-      badgeText: "10+"
-    },
-    {
-      path: "/ui/grid",
-      name: "Grid",
-      component: Grid
-    },
-    {
-      path: "/ui/modals",
-      name: "Modals",
-      component: Modals
-    },
-    {
-      path: "/ui/tabs",
-      name: "Tabs",
-      component: Tabs
-    },
-    {
-      path: "/ui/typography",
-      name: "Typography",
-      component: Typography
-    }
-  ]
-};
+// const uiRoutes = {
+//   path: "/ui",
+//   name: "UI Elements",
+//   header: "Tools & Components",
+//   icon: GridIcon,
+//   children: [
+//     {
+//       path: "/ui/alerts",
+//       name: "Alerts",
+//       component: Alerts
+//     },
+//     {
+//       path: "/ui/buttons",
+//       name: "Buttons",
+//       component: Buttons
+//     },
+//     {
+//       path: "/ui/cards",
+//       name: "Cards",
+//       component: Cards
+//     },
+//     {
+//       path: "/ui/carousel",
+//       name: "Carousel",
+//       component: Carousel
+//     },
+//     {
+//       path: "/ui/embed-video",
+//       name: "Embed Video",
+//       component: EmbedVideo
+//     },
+//     {
+//       path: "/ui/general",
+//       name: "General",
+//       component: General,
+//       badgeColor: "info",
+//       badgeText: "10+"
+//     },
+//     {
+//       path: "/ui/grid",
+//       name: "Grid",
+//       component: Grid
+//     },
+//     {
+//       path: "/ui/modals",
+//       name: "Modals",
+//       component: Modals
+//     },
+//     {
+//       path: "/ui/tabs",
+//       name: "Tabs",
+//       component: Tabs
+//     },
+//     {
+//       path: "/ui/typography",
+//       name: "Typography",
+//       component: Typography
+//     }
+//   ]
+// };
 
-const iconRoutes = {
-  path: "/icons",
-  name: "Icons",
-  icon: HeartIcon,
-  badgeColor: "info",
-  badgeText: "1500+",
-  children: [
-    {
-      path: "/icons/feather",
-      name: "Feather",
-      component: Feather
-    },
-    {
-      path: "/icons/font-awesome",
-      name: "Font Awesome",
-      component: FontAwesome
-    }
-  ]
-};
+// const iconRoutes = {
+//   path: "/icons",
+//   name: "Icons",
+//   icon: HeartIcon,
+//   badgeColor: "info",
+//   badgeText: "1500+",
+//   children: [
+//     {
+//       path: "/icons/feather",
+//       name: "Feather",
+//       component: Feather
+//     },
+//     {
+//       path: "/icons/font-awesome",
+//       name: "Font Awesome",
+//       component: FontAwesome
+//     }
+//   ]
+// };
 
-const formRoutes = {
-  path: "/forms",
-  name: "Forms",
-  icon: CheckSquareIcon,
-  children: [
-    {
-      path: "/forms/layouts",
-      name: "Layouts",
-      component: Layouts
-    },
-    {
-      path: "/forms/basic-inputs",
-      name: "Basic Inputs",
-      component: BasicInputs
-    },
-    {
-      path: "/forms/input-groups",
-      name: "Input Groups",
-      component: InputGroups
-    }
-  ]
-};
+// const formRoutes = {
+//   path: "/forms",
+//   name: "Forms",
+//   icon: CheckSquareIcon,
+//   children: [
+//     {
+//       path: "/forms/layouts",
+//       name: "Layouts",
+//       component: Layouts
+//     },
+//     {
+//       path: "/forms/basic-inputs",
+//       name: "Basic Inputs",
+//       component: BasicInputs
+//     },
+//     {
+//       path: "/forms/input-groups",
+//       name: "Input Groups",
+//       component: InputGroups
+//     }
+//   ]
+// };
 
-const tableRoutes = {
-  path: "/tables",
-  name: "Tables",
-  icon: ListIcon,
-  component: BootstrapTables,
-  children: null
-};
+// const tableRoutes = {
+//   path: "/tables",
+//   name: "Tables",
+//   icon: ListIcon,
+//   component: BootstrapTables,
+//   children: null
+// };
 
-const formPluginsRoutes = {
-  path: "/form-plugins",
-  name: "Form Plugins",
-  icon: CheckSquareIcon,
-  header: "Plugin & Addons",
-  children: [
-    {
-      path: "/form-plugins/advanced-inputs",
-      name: "Advanced Inputs",
-      component: AdvancedInputs
-    },
-    {
-      path: "/form-plugins/editors",
-      name: "Editors",
-      component: Editors
-    },
-    {
-      path: "/form-plugins/validation",
-      name: "Validation",
-      component: Validation
-    },
-    {
-      path: "/form-plugins/wizard",
-      name: "Wizard",
-      component: Wizard
-    }
-  ]
-};
+// const formPluginsRoutes = {
+//   path: "/form-plugins",
+//   name: "Form Plugins",
+//   icon: CheckSquareIcon,
+//   header: "Plugin & Addons",
+//   children: [
+//     {
+//       path: "/form-plugins/advanced-inputs",
+//       name: "Advanced Inputs",
+//       component: AdvancedInputs
+//     },
+//     {
+//       path: "/form-plugins/editors",
+//       name: "Editors",
+//       component: Editors
+//     },
+//     {
+//       path: "/form-plugins/validation",
+//       name: "Validation",
+//       component: Validation
+//     },
+//     {
+//       path: "/form-plugins/wizard",
+//       name: "Wizard",
+//       component: Wizard
+//     }
+//   ]
+// };
 
-const advancedTablesRoutes = {
-  path: "/advanced-tables",
-  name: "Advanced Tables",
-  icon: ListIcon,
-  children: [
-    {
-      path: "/advanced-tables/pagination",
-      name: "Pagination",
-      component: PaginationTables
-    },
-    {
-      path: "/advanced-tables/row-selection",
-      name: "Row Selection",
-      component: RowSelectionTables
-    },
-    {
-      path: "/advanced-tables/expandable-rows",
-      name: "Expandable Rows",
-      component: ExpandableRowsTables
-    },
-    {
-      path: "/advanced-tables/export-csv",
-      name: "Export CSV",
-      component: ExportCsvTables
-    }
-  ]
-};
+// const advancedTablesRoutes = {
+//   path: "/advanced-tables",
+//   name: "Advanced Tables",
+//   icon: ListIcon,
+//   children: [
+//     {
+//       path: "/advanced-tables/pagination",
+//       name: "Pagination",
+//       component: PaginationTables
+//     },
+//     {
+//       path: "/advanced-tables/row-selection",
+//       name: "Row Selection",
+//       component: RowSelectionTables
+//     },
+//     {
+//       path: "/advanced-tables/expandable-rows",
+//       name: "Expandable Rows",
+//       component: ExpandableRowsTables
+//     },
+//     {
+//       path: "/advanced-tables/export-csv",
+//       name: "Export CSV",
+//       component: ExportCsvTables
+//     }
+//   ]
+// };
 
-const chartRoutes = {
-  path: "/charts",
-  name: "Charts",
-  icon: PieChartIcon,
-  badgeColor: "primary",
-  badgeText: "New",
-  children: [
-    {
-      path: "/charts/chartjs",
-      name: "Chart.js",
-      component: Chartjs
-    },
-    {
-      path: "/charts/apexcharts",
-      name: "ApexCharts",
-      component: ApexCharts,
-      badgeColor: "primary",
-      badgeText: "New"
-    }
-  ]
-};
+// const chartRoutes = {
+//   path: "/charts",
+//   name: "Charts",
+//   icon: PieChartIcon,
+//   badgeColor: "primary",
+//   badgeText: "New",
+//   children: [
+//     {
+//       path: "/charts/chartjs",
+//       name: "Chart.js",
+//       component: Chartjs
+//     },
+//     {
+//       path: "/charts/apexcharts",
+//       name: "ApexCharts",
+//       component: ApexCharts,
+//       badgeColor: "primary",
+//       badgeText: "New"
+//     }
+//   ]
+// };
 
-const notificationsRoutes = {
-  path: "/notifications",
-  name: "Notifications",
-  icon: Bellicon,
-  component: Notifications,
-  children: null
-};
+// const notificationsRoutes = {
+//   path: "/notifications",
+//   name: "Notifications",
+//   icon: Bellicon,
+//   component: Notifications,
+//   children: null
+// };
 
-const mapRoutes = {
-  path: "/maps",
-  name: "Maps",
-  icon: MapPinIcon,
-  children: [
-    {
-      path: "/maps/google-maps",
-      name: "Google Maps",
-      component: GoogleMaps
-    },
-    {
-      path: "/maps/vector-maps",
-      name: "Vector Maps",
-      component: VectorMaps
-    }
-  ]
-};
+// const mapRoutes = {
+//   path: "/maps",
+//   name: "Maps",
+//   icon: MapPinIcon,
+//   children: [
+//     {
+//       path: "/maps/google-maps",
+//       name: "Google Maps",
+//       component: GoogleMaps
+//     },
+//     {
+//       path: "/maps/vector-maps",
+//       name: "Vector Maps",
+//       component: VectorMaps
+//     }
+//   ]
+// };
 
-const calendarRoutes = {
-  path: "/calendar",
-  name: "Calendar",
-  icon: CalendarIcon,
-  component: Calendar,
-  children: null
-};
+// const calendarRoutes = {
+//   path: "/calendar",
+//   name: "Calendar",
+//   icon: CalendarIcon,
+//   component: Calendar,
+//   children: null
+// };
 
 // This route is not visisble in the sidebar
 const privateRoutes = {
@@ -574,19 +658,21 @@ const privateRoutes = {
 // Dashboard specific routes
 export const dashboard = [
   dashboardRoutes,
-  pageRoutes,
-  layoutRoutes,
-  documentationRoutes,
-  uiRoutes,
-  iconRoutes,
-  formRoutes,
-  tableRoutes,
-  formPluginsRoutes,
-  advancedTablesRoutes,
-  chartRoutes,
-  notificationsRoutes,
-  mapRoutes,
-  calendarRoutes,
+  vehicleRoutes,
+  inspectionRoutes,
+  // pageRoutes,
+  // layoutRoutes,
+  // documentationRoutes,
+  // uiRoutes,
+  // iconRoutes,
+  // formRoutes,
+  // tableRoutes,
+  // formPluginsRoutes,
+  // advancedTablesRoutes,
+  // chartRoutes,
+  // notificationsRoutes,
+  // mapRoutes,
+  // calendarRoutes,
   privateRoutes
 ];
 
@@ -599,18 +685,20 @@ export const page = [authRoutes];
 // All routes
 export default [
   dashboardRoutes,
-  pageRoutes,
-  authRoutes,
-  layoutRoutes,
-  documentationRoutes,
-  uiRoutes,
-  iconRoutes,
-  formRoutes,
-  tableRoutes,
-  formPluginsRoutes,
-  advancedTablesRoutes,
-  chartRoutes,
-  notificationsRoutes,
-  mapRoutes,
-  calendarRoutes
+  vehicleRoutes,
+  inspectionRoutes,
+  // pageRoutes,
+  // authRoutes,
+  // layoutRoutes,
+  // documentationRoutes,
+  // uiRoutes,
+  // iconRoutes,
+  // formRoutes,
+  // tableRoutes,
+  // formPluginsRoutes,
+  // advancedTablesRoutes,
+  // chartRoutes,
+  // notificationsRoutes,
+  // mapRoutes,
+  // calendarRoutes
 ];
